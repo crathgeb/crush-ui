@@ -1,17 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import type { Theme, ThemeProviderProps, ThemeProviderState } from './theme-provider.types';
 
-type Theme = 'dark' | 'light' | 'system';
-
-type ThemeProviderProps = {
-  children: React.ReactNode;
-  defaultTheme?: Theme;
-  storageKey?: string;
-};
-
-type ThemeProviderState = {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-};
+export type { Theme, ThemeProviderProps, ThemeProviderState };
 
 const initialState: ThemeProviderState = {
   theme: 'system',
@@ -20,7 +10,6 @@ const initialState: ThemeProviderState = {
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
-// Helper function to safely access localStorage
 const getStoredTheme = (key: string): Theme | null => {
   if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
     try {
@@ -32,7 +21,6 @@ const getStoredTheme = (key: string): Theme | null => {
   return null;
 };
 
-// Helper function to safely set localStorage
 const setStoredTheme = (key: string, value: Theme): void => {
   if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
     try {

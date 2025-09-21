@@ -161,7 +161,13 @@ export type {
   TabsTriggerProps,
   TabsContentProps,
   SidebarPageTemplateProps,
+  Theme,
+  ThemeProviderProps,
+  ThemeProviderState,
 } from './types';
+
+// Providers - Individual component exports for better tree-shaking
+export { ThemeProvider, useTheme } from './providers/theme-provider';
 
 // Utils - Exported for consumer use
 export { cn } from './utils/cn';

@@ -90,12 +90,24 @@ export type {
   StackNavigatorState,
 } from "../components/organisms/stack-navigator";
 
-export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from "../components/organisms/tabs";
+export type {
+  TabsProps,
+  TabsListProps,
+  TabsTriggerProps,
+  TabsContentProps,
+} from "../components/organisms/tabs";
 
 export type { UserProfileLabelProps } from "../components/organisms/user-profile-label";
 
 // Re-export template component types
 export type { SidebarPageTemplateProps } from "../components/templates/sidebar-page-template";
+
+// Re-export provider types
+export type {
+  Theme,
+  ThemeProviderProps,
+  ThemeProviderState,
+} from "../providers/theme-provider";
 
 // Common types
 export interface BaseComponentProps {
@@ -120,13 +132,4 @@ export interface ThemeColors {
   muted: string;
   border: string;
   destructive: string;
-}
-
-export interface Theme {
-  colors: ThemeColors;
-  spacing: Record<string, string>;
-  typography: {
-    fontFamily: string;
-    fontSize: Record<ComponentSize, string>;
-  };
 }
