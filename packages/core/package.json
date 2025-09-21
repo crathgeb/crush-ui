@@ -11,10 +11,10 @@
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./Button": {
-      "import": "./dist/components/Button/index.esm.js",
-      "require": "./dist/components/Button/index.js",
-      "types": "./dist/components/Button/index.d.ts"
+    "./components": {
+      "import": "./dist/components/index.esm.js",
+      "require": "./dist/components/index.js",
+      "types": "./dist/components/index.d.ts"
     },
     "./utils": {
       "import": "./dist/utils/index.esm.js",
@@ -34,8 +34,13 @@
     "README.md"
   ],
   "scripts": {
-    "build": "rm -rf dist && vite build --config vite.lib.config.ts",
-    "dev": "vite build --config vite.lib.config.ts --watch",
+    "build": "npm run build:clean && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:css",
+    "build:clean": "rm -rf dist",
+    "build:cjs": "tsc --project tsconfig.build.json --module commonjs --outDir dist",
+    "build:esm": "tsc --project tsconfig.build.json --module esnext --outDir dist/esm && node scripts/move-esm.js",
+    "build:types": "tsc --project tsconfig.build.json --declaration --emitDeclarationOnly --outDir dist",
+    "build:css": "npx postcss src/styles.css -o dist/styles.css",
+    "dev": "tsc --project tsconfig.build.json --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
@@ -81,7 +86,6 @@
     "react-hook-form": "^7.62.0",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.11",
     "tw-animate-css": "^1.3.6",
     "usehooks-ts": "^3.1.1",
     "zod": "^4.1.5"
@@ -102,8 +106,12 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "typescript": "~5.8.3",
-    "vite": "^7.1.0",
-    "vite-plugin-dts": "^4.5.4"
+    "@types/node": "^22.0.0",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6"
   },
   "publishConfig": {
     "access": "public"
