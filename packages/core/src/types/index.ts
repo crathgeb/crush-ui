@@ -64,7 +64,35 @@ export type {
   CardActionProps,
   CardDescriptionProps,
   CardContentProps,
-} from "../components/organisms/Card";
+} from "../components/organisms/card";
+
+export type {
+  FileTreeProps,
+  FileTreeItemProps,
+  FolderTreeItemProps,
+  FileNode,
+  FileSearchProps,
+} from "../components/organisms/file-tree";
+
+export type {
+  MagicDrawerProps,
+  MagicDrawerTriggerProps,
+  MagicDrawerContentProps,
+  DrawerPosition,
+  MagicDrawerContextType,
+  MagicDrawerState,
+} from "../components/organisms/magic-drawer";
+
+export type {
+  StackNavigatorProps,
+  StackScreenProps,
+  StackNavigatorContextType,
+  StackNavigatorState,
+} from "../components/organisms/stack-navigator";
+
+export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from "../components/organisms/tabs";
+
+export type { UserProfileLabelProps } from "../components/organisms/user-profile-label";
 
 // Common types
 export interface BaseComponentProps {

@@ -1,23 +1,13 @@
-import React, { useEffect } from 'react';
-import { cn } from '@/utils';
-import { FileTreeItem } from './FileTreeItem';
-import { FolderTreeItem } from './FolderTreeItem';
-import { useDebounceValue } from 'usehooks-ts';
-import { NavItem } from '@/components/molecules/Navigation/NavItem';
-import { formatFileSize } from './fileUtils';
-import type { ItemInstance } from '@headless-tree/core';
+import React, { useEffect } from "react";
+import { cn } from "@/utils";
+import { useDebounceValue } from "usehooks-ts";
+import { NavItem } from "@/components/molecules/navigation/components/nav-item";
+import type { FileTreeProps } from "./file-tree.types";
+import { FileTreeItem } from "./components/file-tree-item";
+import { FolderTreeItem } from "./components/folder-tree-item";
+import { formatFileSize } from "./file-tree.types";
 
-export interface TreeItemProps {
-  item: ItemInstance<any>;
-  isSelected: boolean;
-  isExpanded: boolean;
-  isFocused: boolean;
-  isSearching: boolean;
-  customFolderTreeItem?: (item: ItemInstance<any>) => React.ReactElement;
-  customFileNode?: (item: ItemInstance<any>) => React.ReactElement;
-}
-
-export const TreeItem = ({
+export const FileTree = ({
   item,
   isSelected,
   isExpanded,
@@ -26,7 +16,7 @@ export const TreeItem = ({
   customFolderTreeItem,
   customFileNode,
   ...rest
-}: TreeItemProps) => {
+}: FileTreeProps) => {
   const [isTarget, setIsTarget] = useDebounceValue(item.isDragTarget(), 100);
 
   useEffect(() => {
@@ -34,16 +24,16 @@ export const TreeItem = ({
   }, [item.isDragTarget()]);
 
   return (
-    <NavItem asChild variant={isSelected ? 'active' : 'default'} {...rest}>
+    <NavItem asChild variant={isSelected ? "active" : "default"} {...rest}>
       <div
-        className={cn('treeitem', {
-          'treeitem-search-match': isSearching && item.isMatchingSearch(),
-          'treeitem-focused': isFocused,
-          'treeitem-drop-target': isTarget,
+        className={cn("treeitem", {
+          "treeitem-search-match": isSearching && item.isMatchingSearch(),
+          "treeitem-focused": isFocused,
+          "treeitem-drop-target": isTarget,
         })}
         style={{
           paddingLeft: `${item.getItemMeta().level * 20 + 14}px`,
-          display: isSearching && !item.isMatchingSearch() ? 'none' : 'block',
+          display: isSearching && !item.isMatchingSearch() ? "none" : "block",
         }}
       >
         {item.isFolder() ? (

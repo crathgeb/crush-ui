@@ -1,15 +1,7 @@
 import React from 'react';
-import type { FileNode as FileNodeType } from './types';
-import { getFileIcon } from './fileUtils';
 import { cn } from '@/utils';
-
-export interface FileTreeItemProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  label: string;
-  icon?: React.ReactElement;
-  rightSide?: React.ReactElement;
-  onSelectFile?: (file: FileNodeType, event?: React.MouseEvent) => void;
-}
+import type { FileTreeItemProps } from '../file-tree.types';
+import { getFileIcon } from '../file-tree.types';
 
 export const FileTreeItem = React.forwardRef<HTMLDivElement, FileTreeItemProps>(
   ({ label, icon, rightSide, onSelectFile, className, ...props }, ref) => {

@@ -1,14 +1,6 @@
-import React, { type ReactNode, useMemo, useEffect, useRef } from 'react';
-import { useStackNavigator } from '../StackNavigator/StackNavigator';
-
-export interface StackScreenProps {
-  screenId: string;
-  children: ReactNode;
-  onShown?: () => void;
-  onHidden?: () => void;
-  className?: string;
-  scrollable?: boolean;
-}
+import React, { useMemo, useEffect, useRef } from 'react';
+import { useStackNavigator } from '../stack-navigator';
+import type { StackScreenProps } from '../stack-navigator.types';
 
 export const StackScreen: React.FC<StackScreenProps> = ({
   screenId,

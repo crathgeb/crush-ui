@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { DrawerPosition } from './MagicDrawer';
+import type { DrawerPosition } from '../magic-drawer.types';
 
 interface UseDragToCloseOptions {
   isVisible: boolean;

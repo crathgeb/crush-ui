@@ -3,38 +3,18 @@ import React, {
   useContext,
   useState,
   useCallback,
-  type ReactNode,
   useRef,
   useEffect,
 } from 'react';
-
-interface StackNavigatorState {
-  screenStack: string[];
-  animatingScreens: string[];
-  pendingScreen: string | null;
-}
-
-interface StackNavigatorContextType {
-  currentScreen: string;
-  screenStack: string[];
-  animatingScreens: string[];
-  pendingScreen: string | null;
-  canGoBack: boolean;
-  pushScreen: (screenId: string) => void;
-  popScreen: () => void;
-  goToRoot: () => void;
-}
+import type {
+  StackNavigatorState,
+  StackNavigatorContextType,
+  StackNavigatorProps,
+} from './stack-navigator.types';
 
 const StackNavigatorContext = createContext<StackNavigatorContextType | null>(
   null
 );
-
-export interface StackNavigatorProps {
-  children: ((context: StackNavigatorContextType) => ReactNode) | ReactNode;
-  initialScreen?: string;
-  onStackChange?: (stack: string[]) => void;
-  resetOnHidden?: boolean;
-}
 
 export const StackNavigator: React.FC<StackNavigatorProps> = ({
   children,

@@ -1,23 +1,13 @@
 import React, { useEffect } from 'react';
-import type { FileNode } from './types';
+import { cn } from '@/utils';
+import { useDebounceValue } from 'usehooks-ts';
 import {
   ChevronDownIcon,
   ChevronRightIcon,
   FolderIcon,
   FolderOpenIcon,
 } from 'lucide-react';
-import { cn } from '@/utils';
-import { useDebounceValue } from 'usehooks-ts';
-
-export interface FolderTreeItemProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  label: string;
-  isExpanded: boolean;
-  icon?: React.ReactElement;
-  isDragTarget?: boolean;
-  onToggleFolder?: (folder: FileNode, event?: React.MouseEvent) => void;
-  childrenCount?: number;
-}
+import type { FolderTreeItemProps } from '../file-tree.types';
 
 export const FolderTreeItem = React.forwardRef<
   HTMLDivElement,

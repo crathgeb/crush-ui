@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
-import type { DrawerPosition } from './MagicDrawer';
+import type { DrawerPosition } from '../magic-drawer.types';
 
 interface UseSpaceDetectionOptions {
   position: DrawerPosition;

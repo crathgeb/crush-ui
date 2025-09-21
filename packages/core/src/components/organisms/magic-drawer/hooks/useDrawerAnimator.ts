@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import type { DrawerPosition } from './MagicDrawer';
-import { useMagicDrawer } from './MagicDrawer';
+import type { DrawerPosition } from '../magic-drawer.types';
+import { useMagicDrawer } from '../magic-drawer';
 import { useDragToClose } from './useDragToClose';
 
 interface UseDrawerAnimatorProps {

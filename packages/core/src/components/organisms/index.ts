@@ -1,50 +1,66 @@
-export { UserProfileLabel } from './UserProfileLabel';
-export type { UserProfileLabelProps } from './UserProfileLabel';
+export { UserProfileLabel } from "./user-profile-label";
+export type { UserProfileLabelProps } from "./user-profile-label";
 
-export { MobileBottomNavBar, MobileBottomNavItem } from './MobileBottomNav';
+export { MobileBottomNavBar, MobileBottomNavItem } from "./mobile-bottom-nav";
 export type {
   MobileBottomNavBarProps,
   MobileBottomNavItemProps,
-} from './MobileBottomNav';
+} from "./mobile-bottom-nav";
 
 export {
   MagicDrawer,
   MagicDrawerTrigger,
+  MagicDrawerContent,
   useMagicDrawer,
   MagicDrawerControls,
-} from './MagicDrawer';
+  openDrawer,
+  closeDrawer,
+  toggleDrawer,
+  isDrawerOpen,
+  getDrawerIds,
+  useGlobalDragGestures,
+  useSpaceDetection,
+} from "./magic-drawer";
 export type {
   MagicDrawerProps,
   DrawerPosition,
   MagicDrawerTriggerProps,
-} from './MagicDrawer';
+  MagicDrawerContentProps,
+  MagicDrawerContextType,
+  MagicDrawerState,
+} from "./magic-drawer";
 
 export {
   StackScreen,
   StackNavigator,
   useStackNavigator,
-} from './StackNavigator';
-export type { StackNavigatorProps } from './StackNavigator';
-export type { StackScreenProps } from './StackNavigator';
+} from "./stack-navigator";
+export type {
+  StackNavigatorProps,
+  StackScreenProps,
+  StackNavigatorContextType,
+  StackNavigatorState,
+} from "./stack-navigator";
 
 export {
-  TreeItem,
-  FolderTreeItem,
+  FileTree,
   FileTreeItem,
+  FolderTreeItem,
   FileSearch,
   formatFileSize,
   getFileExtension,
   getFileIcon,
-} from './FileTree';
+} from "./file-tree";
 export type {
-  TreeItemProps,
-  FolderTreeItemProps,
+  FileTreeProps,
   FileTreeItemProps,
+  FolderTreeItemProps,
   FileNode,
   FileSearchProps,
-} from './FileTree';
+} from "./file-tree";
 
-export { Tabs, TabsList, TabsTrigger, TabsContent } from './Tabs';
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs";
+export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from "./tabs";
 
 export {
   Card,
@@ -54,7 +70,7 @@ export {
   CardAction,
   CardDescription,
   CardContent,
-} from './Card';
+} from "./card";
 export type {
   CardProps,
   CardHeaderProps,
@@ -63,4 +79,4 @@ export type {
   CardActionProps,
   CardDescriptionProps,
   CardContentProps,
-} from './Card';
+} from "./card";

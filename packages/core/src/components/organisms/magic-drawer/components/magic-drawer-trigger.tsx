@@ -1,14 +1,7 @@
 import React, { type ReactNode, cloneElement } from 'react';
 import { isValidElement } from 'react';
-import { cn } from '../../../utils/cn';
-
-export interface MagicDrawerTriggerProps {
-  children: ReactNode;
-  drawerId?: string;
-  action?: 'open' | 'close' | 'toggle';
-  className?: string;
-  asChild?: boolean;
-}
+import { cn } from '../../../../utils/cn';
+import type { MagicDrawerTriggerProps } from '../magic-drawer.types';
 
 export const MagicDrawerTrigger: React.FC<MagicDrawerTriggerProps> = ({
   children,

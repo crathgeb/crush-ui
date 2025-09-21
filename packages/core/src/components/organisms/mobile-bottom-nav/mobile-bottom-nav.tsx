@@ -1,10 +1,7 @@
 import { cn } from '@/utils/cn';
 import { CircleQuestionMarkIcon } from 'lucide-react';
-import { forwardRef, type PropsWithChildren } from 'react';
-
-export type MobileBottomNavBarProps = PropsWithChildren<{
-  className?: string;
-}>;
+import { forwardRef } from 'react';
+import type { MobileBottomNavBarProps, MobileBottomNavItemProps } from './mobile-bottom-nav.types';
 
 export const MobileBottomNavBar = forwardRef<
   HTMLDivElement,
@@ -22,15 +19,6 @@ export const MobileBottomNavBar = forwardRef<
 });
 
 MobileBottomNavBar.displayName = 'MobileBottomNavBar';
-
-export type MobileBottomNavItemProps = PropsWithChildren<{
-  as?: React.ElementType;
-  label: string;
-  icon?: React.ElementType;
-  href?: string;
-  onClick?: () => void;
-  className?: string;
-}>;
 
 export const MobileBottomNavItem = ({
   as,

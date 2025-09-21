@@ -64,6 +64,36 @@ export {
   navItemVariants,
 } from './components/molecules/navigation';
 
+// Organisms - Individual component exports for better tree-shaking
+export {
+  FileTree,
+  FileTreeItem,
+  FolderTreeItem,
+  FileSearch,
+  formatFileSize,
+  getFileExtension,
+  getFileIcon,
+} from './components/organisms/file-tree';
+
+export {
+  MagicDrawer,
+  MagicDrawerTrigger,
+  MagicDrawerContent,
+  useMagicDrawer,
+  MagicDrawerControls,
+  openDrawer,
+  closeDrawer,
+  toggleDrawer,
+  isDrawerOpen,
+  getDrawerIds,
+  useGlobalDragGestures,
+  useSpaceDetection,
+} from './components/organisms/magic-drawer';
+
+export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/organisms/tabs';
+
+export { UserProfileLabel } from './components/organisms/user-profile-label';
+
 // Base/primitive components (commonly used)
 export {
   DropdownMenu as DropdownMenuPrimitive,
@@ -112,6 +142,21 @@ export type {
   NavHeaderProps,
   NavDividerProps,
   NavSectionLabelProps,
+  FileTreeProps,
+  FileTreeItemProps,
+  FolderTreeItemProps,
+  FileNode,
+  FileSearchProps,
+  MagicDrawerProps,
+  MagicDrawerTriggerProps,
+  MagicDrawerContentProps,
+  DrawerPosition,
+  MagicDrawerContextType,
+  MagicDrawerState,
+  TabsProps,
+  TabsListProps,
+  TabsTriggerProps,
+  TabsContentProps,
 } from './types';
 
 // Utils - Exported for consumer use

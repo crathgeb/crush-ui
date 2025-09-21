@@ -1,31 +1,20 @@
-import React, { type ReactNode } from 'react';
-import { DragHandle } from '../../molecules/DragHandle';
-import { useDrawerAnimator } from './useDrawerAnimator';
-import { useGlobalDragGestures } from './useGlobalDragGestures';
-import type { DrawerPosition } from './MagicDrawer';
-import { cn } from '../../../utils/cn';
-
-interface MagicDrawerContentProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: ReactNode;
-  height?: number; // 1-100%
-  className?: string;
-  position?: DrawerPosition;
-  sizeBreakpoints?: number[];
-  currentBreakpointIndex?: number;
-  onBreakpointChange?: (index: number) => void;
-  allowDragAnywhere?: boolean;
-  shouldAutoJump?: boolean;
-}
+import React, { type ReactNode } from "react";
+import { DragHandle } from "../../../molecules/drag-handle";
+import { useDrawerAnimator } from "../hooks/useDrawerAnimator";
+import { useGlobalDragGestures } from "../hooks/useGlobalDragGestures";
+import type {
+  DrawerPosition,
+  MagicDrawerContentProps,
+} from "../magic-drawer.types";
+import { cn } from "../../../../utils/cn";
 
 export const MagicDrawerContent: React.FC<MagicDrawerContentProps> = ({
   isOpen,
   onClose,
   children,
-  className = '',
+  className = "",
   height = 50,
-  position = 'bottom',
+  position = "bottom",
   sizeBreakpoints = [50],
   currentBreakpointIndex = 0,
   onBreakpointChange,
@@ -74,10 +63,10 @@ export const MagicDrawerContent: React.FC<MagicDrawerContentProps> = ({
   React.useEffect(() => {
     if (containerRef.current && isOpen && isGlobalDragging) {
       const container = containerRef.current;
-      const isHorizontal = position === 'left' || position === 'right';
+      const isHorizontal = position === "left" || position === "right";
 
       // Remove transitions during global dragging
-      container.style.transition = 'none';
+      container.style.transition = "none";
 
       if (isHorizontal) {
         let newWidth = (window.innerWidth * currentHeight) / 100;
@@ -99,10 +88,10 @@ export const MagicDrawerContent: React.FC<MagicDrawerContentProps> = ({
     } else if (containerRef.current && !isGlobalDragging) {
       // Restore transitions when not dragging
       const container = containerRef.current;
-      const isHorizontal = position === 'left' || position === 'right';
+      const isHorizontal = position === "left" || position === "right";
       container.style.transition = isHorizontal
-        ? 'width 300ms ease-out'
-        : 'height 300ms ease-out';
+        ? "width 300ms ease-out"
+        : "height 300ms ease-out";
     }
   }, [isGlobalDragging, globalDragOffset, isOpen, currentHeight, position]);
 
@@ -111,16 +100,16 @@ export const MagicDrawerContent: React.FC<MagicDrawerContentProps> = ({
   const renderDragHandle = () => {
     const getDirection = () => {
       switch (position) {
-        case 'bottom':
-          return 'up';
-        case 'top':
-          return 'down';
-        case 'left':
-          return 'right';
-        case 'right':
-          return 'left';
+        case "bottom":
+          return "up";
+        case "top":
+          return "down";
+        case "left":
+          return "right";
+        case "right":
+          return "left";
         default:
-          return 'up';
+          return "up";
       }
     };
 
@@ -140,13 +129,13 @@ export const MagicDrawerContent: React.FC<MagicDrawerContentProps> = ({
     <>
       {/* Backdrop */}
       <div
-        className={cn('ts-magic-drawer-backdrop', {
-          'ts-magic-drawer-backdrop-open': isOpen,
-          'ts-magic-drawer-backdrop-closed': !isOpen,
+        className={cn("ts-magic-drawer-backdrop", {
+          "ts-magic-drawer-backdrop-open": isOpen,
+          "ts-magic-drawer-backdrop-closed": !isOpen,
         })}
         style={{
           // Disable pointer events on backdrop entirely - let drawer handle its own events
-          pointerEvents: 'none',
+          pointerEvents: "none",
         }}
         onClick={(e) => {
           // Only close if the click is on the backdrop itself, not on drawer content
@@ -159,28 +148,28 @@ export const MagicDrawerContent: React.FC<MagicDrawerContentProps> = ({
       {/* Backdrop click areas - only in areas not covered by drawer */}
       {isOpen && (
         <>
-          {position === 'bottom' && (
+          {position === "bottom" && (
             <div
               className="z-toast fixed top-0 right-0 left-0"
               style={{ bottom: `${currentHeight}%` }}
               onClick={onClose}
             />
           )}
-          {position === 'top' && (
+          {position === "top" && (
             <div
               className="z-toast fixed right-0 bottom-0 left-0"
               style={{ top: `${currentHeight}%` }}
               onClick={onClose}
             />
           )}
-          {position === 'left' && (
+          {position === "left" && (
             <div
               className="z-toast fixed top-0 right-0 bottom-0"
               style={{ left: `${currentHeight}%` }}
               onClick={onClose}
             />
           )}
-          {position === 'right' && (
+          {position === "right" && (
             <div
               className="z-toast fixed top-0 bottom-0 left-0"
               style={{ right: `${currentHeight}%` }}
@@ -193,9 +182,9 @@ export const MagicDrawerContent: React.FC<MagicDrawerContentProps> = ({
       {/* Drawer Container */}
       <div
         className={cn(
-          'ts-magic-drawer-container',
-          position === 'left' && 'ts-magic-drawer-container-left',
-          position === 'right' && 'ts-magic-drawer-container-right',
+          "ts-magic-drawer-container",
+          position === "left" && "ts-magic-drawer-container-left",
+          position === "right" && "ts-magic-drawer-container-right",
           containerClasses,
           transformClass,
           className
@@ -204,18 +193,18 @@ export const MagicDrawerContent: React.FC<MagicDrawerContentProps> = ({
           // Apply all drag transforms to the outer container
           ...dragTransform,
           transition:
-            isDragging || isGlobalDragging ? 'none' : 'all 300ms ease-out',
+            isDragging || isGlobalDragging ? "none" : "all 300ms ease-out",
         }}
       >
         {/* Draggable Handle - position it appropriately */}
-        {(position === 'bottom' || position === 'right') && renderDragHandle()}
+        {(position === "bottom" || position === "right") && renderDragHandle()}
 
         {/* Content Container - Dynamic size management */}
         <div ref={containerRef} className="ts-magic-drawer-content">
           {children}
         </div>
 
-        {(position === 'left' || position === 'top') && renderDragHandle()}
+        {(position === "left" || position === "top") && renderDragHandle()}
       </div>
     </>
   );

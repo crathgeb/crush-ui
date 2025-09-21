@@ -14,7 +14,7 @@ export {
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
   DropdownMenuPortal,
-} from './_base/dropdown-menu';
+} from "./_base/dropdown-menu";
 
 export {
   ContextMenu,
@@ -32,20 +32,20 @@ export {
   ContextMenuRadioItem,
   ContextMenuSeparator,
   ContextMenuShortcut,
-} from './_base/context-menu';
+} from "./_base/context-menu";
 
 export {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from './_base/accordion';
+} from "./_base/accordion";
 
 export {
   Collapsible,
   CollapsibleTrigger,
   CollapsibleContent,
-} from './_base/collapsible';
+} from "./_base/collapsible";
 
 export {
   Form,
@@ -55,35 +55,35 @@ export {
   FormControl,
   FormDescription,
   FormMessage,
-} from './_base/form';
+} from "./_base/form";
 
-export { Label } from './_base/label';
+export { Label } from "./_base/label";
 
 // Atoms components - direct imports from source
-export { Button, ButtonVariants } from './atoms/button';
-export type { ButtonProps } from './atoms/button';
+export { Button, ButtonVariants } from "./atoms/button";
+export type { ButtonProps } from "./atoms/button";
 
-export { Input } from './atoms/input';
-export type { InputProps } from './atoms/input';
+export { Input } from "./atoms/input";
+export type { InputProps } from "./atoms/input";
 
-export { Separator } from './atoms/separator';
-export type { SeparatorProps } from './atoms/separator';
+export { Separator } from "./atoms/separator";
+export type { SeparatorProps } from "./atoms/separator";
 
-export { Skeleton } from './atoms/skeleton';
-export type { SkeletonProps } from './atoms/skeleton';
+export { Skeleton } from "./atoms/skeleton";
+export type { SkeletonProps } from "./atoms/skeleton";
 
 export {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
   TooltipProvider,
-} from './atoms/tooltip';
+} from "./atoms/tooltip";
 export type {
   TooltipProps,
   TooltipTriggerProps,
   TooltipContentProps,
   TooltipProviderProps,
-} from './atoms/tooltip';
+} from "./atoms/tooltip";
 
 export {
   Sheet,
@@ -94,7 +94,7 @@ export {
   SheetFooter,
   SheetTitle,
   SheetDescription,
-} from './atoms/sheet';
+} from "./atoms/sheet";
 export type {
   SheetProps,
   SheetTriggerProps,
@@ -104,17 +104,17 @@ export type {
   SheetFooterProps,
   SheetTitleProps,
   SheetDescriptionProps,
-} from './atoms/sheet';
+} from "./atoms/sheet";
 
-export { DropdownMenu } from './atoms/dropdown-menu';
+export { DropdownMenu } from "./atoms/dropdown-menu";
 export type {
   DropdownMenuProps,
   DropdownData,
   MenuItem,
-} from './atoms/dropdown-menu';
+} from "./atoms/dropdown-menu";
 
-export { Toaster } from './atoms/toaster';
-export type { ToasterProps } from './atoms/toaster';
+export { Toaster } from "./atoms/toaster";
+export type { ToasterProps } from "./atoms/toaster";
 
 export {
   Sidebar,
@@ -148,7 +148,7 @@ export {
   isSidebarOpen,
   isSidebarMobile,
   getAllSidebarIds,
-} from './atoms/sidebar';
+} from "./atoms/sidebar";
 export type {
   SidebarContextProps,
   SidebarProviderProps,
@@ -158,15 +158,15 @@ export type {
   SidebarSeparatorProps,
   SidebarMenuButtonProps,
   SidebarMenuButtonVariants,
-} from './atoms/sidebar';
+} from "./atoms/sidebar";
 
 // Molecules components - direct imports from source
-export { DragHandle } from './molecules/drag-handle';
-export type { DragHandleProps } from './molecules/drag-handle';
-export { IconButton } from './molecules/icon-button';
-export type { IconButtonProps } from './molecules/icon-button';
-export { IconLabel } from './molecules/icon-label';
-export type { IconLabelProps } from './molecules/icon-label';
+export { DragHandle } from "./molecules/drag-handle";
+export type { DragHandleProps } from "./molecules/drag-handle";
+export { IconButton } from "./molecules/icon-button";
+export type { IconButtonProps } from "./molecules/icon-button";
+export { IconLabel } from "./molecules/icon-label";
+export type { IconLabelProps } from "./molecules/icon-label";
 export {
   Navigation,
   NavItem,
@@ -174,14 +174,14 @@ export {
   NavDivider,
   NavSectionLabel,
   navItemVariants,
-} from './molecules/navigation';
+} from "./molecules/navigation";
 export type {
   NavigationProps,
   NavItemProps,
   NavHeaderProps,
   NavDividerProps,
   NavSectionLabelProps,
-} from './molecules/navigation';
+} from "./molecules/navigation";
 
 // Organisms components - direct imports from source
 export {
@@ -192,7 +192,7 @@ export {
   CardAction,
   CardDescription,
   CardContent,
-} from './organisms/Card';
+} from "./organisms/card";
 export type {
   CardProps,
   CardHeaderProps,
@@ -201,4 +201,62 @@ export type {
   CardActionProps,
   CardDescriptionProps,
   CardContentProps,
-} from './organisms/Card';
+} from "./organisms/card";
+
+export {
+  FileTree,
+  FileTreeItem,
+  FolderTreeItem,
+  FileSearch,
+  formatFileSize,
+  getFileExtension,
+  getFileIcon,
+} from "./organisms/file-tree";
+export type {
+  FileTreeProps,
+  FileTreeItemProps,
+  FolderTreeItemProps,
+  FileNode,
+  FileSearchProps,
+} from "./organisms/file-tree";
+
+export {
+  MagicDrawer,
+  MagicDrawerTrigger,
+  MagicDrawerContent,
+  useMagicDrawer,
+  MagicDrawerControls,
+  openDrawer,
+  closeDrawer,
+  toggleDrawer,
+  isDrawerOpen,
+  getDrawerIds,
+  useGlobalDragGestures,
+  useSpaceDetection,
+} from "./organisms/magic-drawer";
+export type {
+  MagicDrawerProps,
+  DrawerPosition,
+  MagicDrawerTriggerProps,
+  MagicDrawerContentProps,
+  MagicDrawerContextType,
+  MagicDrawerState,
+} from "./organisms/magic-drawer";
+
+export {
+  StackNavigator,
+  StackScreen,
+  useStackNavigator,
+} from "./organisms/stack-navigator";
+export type {
+  StackNavigatorProps,
+  StackScreenProps,
+  StackNavigatorContextType,
+  StackNavigatorState,
+} from "./organisms/stack-navigator";
+
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "./organisms/tabs";
+export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from "./organisms/tabs";
+
+export { UserProfileLabel } from "./organisms/user-profile-label";
+export type { UserProfileLabelProps } from "./organisms/user-profile-label";

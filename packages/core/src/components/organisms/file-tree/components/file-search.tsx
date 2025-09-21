@@ -1,17 +1,7 @@
 import { useEffect } from 'react';
-import type { FileNode } from './types';
 import { SearchIcon } from 'lucide-react';
-import type { TreeInstance } from '@headless-tree/core';
 import { Input } from '@/components/atoms/input';
-
-export interface FileSearchProps {
-  tree: TreeInstance<any>;
-  files: FileNode[];
-  onFilesFiltered: (filteredFiles: FileNode[]) => void;
-  className?: string;
-  setIsSearching: (isSearching: boolean) => void;
-  value?: string;
-}
+import type { FileSearchProps } from '../file-tree.types';
 
 export const FileSearch = ({
   tree,

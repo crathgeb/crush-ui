@@ -1,64 +1,28 @@
 import React, {
   createContext,
-  useContext,
-  useState,
   useCallback,
+  useContext,
   useEffect,
   useRef,
-  type ReactNode,
-  type ReactElement,
-} from 'react';
-import { MagicDrawerContent } from './MagicDrawerContent';
-import { useSpaceDetection } from './useSpaceDetection';
-
-// Add position type
-export type DrawerPosition = 'bottom' | 'top' | 'left' | 'right';
-
-interface MagicDrawerState {
-  height: number;
-  isOpen: boolean;
-  currentBreakpointIndex: number;
-}
-
-interface MagicDrawerContextType {
-  height: number;
-  isOpen: boolean;
-  currentBreakpointIndex: number;
-  sizeBreakpoints: number[];
-  setHeight: (height: number) => void;
-  setBreakpointIndex: (index: number) => void;
-  moveToNextBreakpoint: () => void;
-  moveToPreviousBreakpoint: () => void;
-  openDrawer: () => void;
-  closeDrawer: () => void;
-  toggleDrawer: () => void;
-}
+  useState,
+} from "react";
+import { MagicDrawerContent } from "./components/magic-drawer-content";
+import { useSpaceDetection } from "./hooks/useSpaceDetection";
+import type {
+  MagicDrawerContextType,
+  MagicDrawerProps,
+  MagicDrawerState,
+} from "./magic-drawer.types";
 
 const MagicDrawerContext = createContext<MagicDrawerContextType | null>(null);
 
-export interface MagicDrawerProps {
-  children:
-    | ((context: MagicDrawerContextType) => ReactElement)
-    | ReactElement
-    | ReactNode;
-  id?: string;
-  height?: number; // 1-100% - deprecated in favor of sizeBreakpoints
-  sizeBreakpoints?: number[]; // Array of size percentages (1-100)
-  defaultOpen?: boolean;
-  position?: DrawerPosition;
-  allowDragAnywhere?: boolean; // Enable global drag gestures on content area
-  onOpen?: () => void;
-  onClose?: () => void;
-  onBreakpointChange?: (index: number, size: number) => void;
-}
-
 export const MagicDrawer: React.FC<MagicDrawerProps> = ({
   children,
-  id = 'magic-drawer',
+  id = "magic-drawer",
   height = 50,
   sizeBreakpoints = [50], // Default to single breakpoint for backward compatibility
   defaultOpen = false,
-  position = 'bottom',
+  position = "bottom",
   allowDragAnywhere = true,
   onOpen,
   onClose,
@@ -177,16 +141,16 @@ export const MagicDrawer: React.FC<MagicDrawerProps> = ({
       if (trigger) {
         event.preventDefault();
         const action =
-          trigger.getAttribute('data-magic-drawer-action') || 'toggle';
+          trigger.getAttribute("data-magic-drawer-action") || "toggle";
 
         switch (action) {
-          case 'open':
+          case "open":
             openDrawer();
             break;
-          case 'close':
+          case "close":
             closeDrawer();
             break;
-          case 'toggle':
+          case "toggle":
           default:
             toggleDrawer();
             break;
@@ -194,20 +158,20 @@ export const MagicDrawer: React.FC<MagicDrawerProps> = ({
       }
     };
 
-    document.addEventListener('click', handleTriggerClick);
-    return () => document.removeEventListener('click', handleTriggerClick);
+    document.addEventListener("click", handleTriggerClick);
+    return () => document.removeEventListener("click", handleTriggerClick);
   }, [id, openDrawer, closeDrawer, toggleDrawer]);
 
   // Handle escape key to close
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && state.isOpen) {
+      if (event.key === "Escape" && state.isOpen) {
         closeDrawer();
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [state.isOpen, closeDrawer]);
 
   // Handle auto-jump when space changes while drawer is open
@@ -258,7 +222,7 @@ export const MagicDrawer: React.FC<MagicDrawerProps> = ({
           allowDragAnywhere={allowDragAnywhere}
           shouldAutoJump={shouldAutoJump}
         >
-          {typeof children === 'function' ? children(value) : children}
+          {typeof children === "function" ? children(value) : children}
         </MagicDrawerContent>
       </div>
     </MagicDrawerContext.Provider>
@@ -268,7 +232,7 @@ export const MagicDrawer: React.FC<MagicDrawerProps> = ({
 export const useMagicDrawer = (): MagicDrawerContextType => {
   const context = useContext(MagicDrawerContext);
   if (!context) {
-    throw new Error('useMagicDrawer must be used within a MagicDrawer');
+    throw new Error("useMagicDrawer must be used within a MagicDrawer");
   }
   return context;
 };
@@ -283,12 +247,12 @@ export const useMagicDrawer = (): MagicDrawerContextType => {
  */
 function createDynamicTrigger(
   drawerId: string,
-  action: 'open' | 'close' | 'toggle' = 'toggle'
+  action: "open" | "close" | "toggle" = "toggle"
 ): void {
-  const tempTrigger = document.createElement('button');
-  tempTrigger.setAttribute('data-magic-drawer-trigger', drawerId);
-  tempTrigger.setAttribute('data-magic-drawer-action', action);
-  tempTrigger.style.display = 'none';
+  const tempTrigger = document.createElement("button");
+  tempTrigger.setAttribute("data-magic-drawer-trigger", drawerId);
+  tempTrigger.setAttribute("data-magic-drawer-action", action);
+  tempTrigger.style.display = "none";
 
   // Add to DOM temporarily, click it, then remove
   document.body.appendChild(tempTrigger);
@@ -301,7 +265,7 @@ function createDynamicTrigger(
  * @param drawerId - The ID of the drawer to open
  */
 export function openDrawer(drawerId: string): void {
-  createDynamicTrigger(drawerId, 'open');
+  createDynamicTrigger(drawerId, "open");
 }
 
 /**
@@ -309,7 +273,7 @@ export function openDrawer(drawerId: string): void {
  * @param drawerId - The ID of the drawer to close
  */
 export function closeDrawer(drawerId: string): void {
-  createDynamicTrigger(drawerId, 'close');
+  createDynamicTrigger(drawerId, "close");
 }
 
 /**
@@ -317,7 +281,7 @@ export function closeDrawer(drawerId: string): void {
  * @param drawerId - The ID of the drawer to toggle
  */
 export function toggleDrawer(drawerId: string): void {
-  createDynamicTrigger(drawerId, 'toggle');
+  createDynamicTrigger(drawerId, "toggle");
 }
 
 /**
@@ -339,7 +303,7 @@ export function isDrawerOpen(drawerId: string): boolean {
   const transform = computedStyle.transform;
 
   // If transform contains full translation (100%) in any direction, drawer is closed
-  return !transform.includes('100%') && transform !== 'none';
+  return !transform.includes("100%") && transform !== "none";
 }
 
 /**
@@ -347,9 +311,9 @@ export function isDrawerOpen(drawerId: string): boolean {
  * @returns Array of drawer IDs
  */
 export function getDrawerIds(): string[] {
-  const drawerElements = document.querySelectorAll('[data-magic-drawer-id]');
+  const drawerElements = document.querySelectorAll("[data-magic-drawer-id]");
   return Array.from(drawerElements)
-    .map((el) => el.getAttribute('data-magic-drawer-id'))
+    .map((el) => el.getAttribute("data-magic-drawer-id"))
     .filter(Boolean) as string[];
 }
 

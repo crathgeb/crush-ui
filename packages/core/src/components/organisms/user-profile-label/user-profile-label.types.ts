@@ -1,7 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/utils';
 
-const UserProfileLabelVariants = cva('rounded-btn flex items-center p-2', {
+export const UserProfileLabelVariants = cva('rounded-btn flex items-center p-2', {
   variants: {
     variant: {
       default: 'space-x-4',
@@ -13,7 +12,7 @@ const UserProfileLabelVariants = cva('rounded-btn flex items-center p-2', {
   },
 });
 
-const nameVariants = cva('surface2-foreground truncate', {
+export const nameVariants = cva('surface2-foreground truncate', {
   variants: {
     variant: {
       default: 'text-lg font-semibold leading-6',
@@ -25,7 +24,7 @@ const nameVariants = cva('surface2-foreground truncate', {
   },
 });
 
-const emailVariants = cva('text-muted-foreground truncate', {
+export const emailVariants = cva('text-muted-foreground truncate', {
   variants: {
     variant: {
       default: 'text-sm',
@@ -37,7 +36,7 @@ const emailVariants = cva('text-muted-foreground truncate', {
   },
 });
 
-const photoVariants = cva('rounded-full object-cover', {
+export const photoVariants = cva('rounded-full object-cover', {
   variants: {
     variant: {
       default: 'h-12 w-12',
@@ -49,7 +48,7 @@ const photoVariants = cva('rounded-full object-cover', {
   },
 });
 
-const fallbackVariants = cva(
+export const fallbackVariants = cva(
   'bg-secondary flex items-center justify-center rounded-full',
   {
     variants: {
@@ -71,34 +70,3 @@ export interface UserProfileLabelProps
   profilePhotoUrl?: string;
   className?: string;
 }
-
-export const UserProfileLabel = ({
-  name,
-  variant = 'default',
-  email,
-  profilePhotoUrl,
-  className,
-}: UserProfileLabelProps) => {
-  return (
-    <div className={cn(UserProfileLabelVariants({ variant, className }))}>
-      {profilePhotoUrl ? (
-        <img
-          className={photoVariants({ variant })}
-          src={profilePhotoUrl}
-          alt={name}
-        />
-      ) : (
-        <div className={fallbackVariants({ variant })}>
-          <span className="text-secondary-foreground text-sm font-medium">
-            {name?.charAt(0)}
-          </span>
-        </div>
-      )}
-
-      <div className="min-w-0 flex-1">
-        <p className={nameVariants({ variant })}>{name}</p>
-        <p className={emailVariants({ variant })}>{email}</p>
-      </div>
-    </div>
-  );
-};
