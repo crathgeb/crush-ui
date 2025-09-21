@@ -55,6 +55,17 @@ export type {
   NavSectionLabelProps,
 } from "../components/molecules/navigation";
 
+// Re-export organism component types
+export type {
+  CardProps,
+  CardHeaderProps,
+  CardFooterProps,
+  CardTitleProps,
+  CardActionProps,
+  CardDescriptionProps,
+  CardContentProps,
+} from "../components/organisms/Card";
+
 // Common types
 export interface BaseComponentProps {
   className?: string;

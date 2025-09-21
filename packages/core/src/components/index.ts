@@ -182,3 +182,23 @@ export type {
   NavDividerProps,
   NavSectionLabelProps,
 } from './molecules/navigation';
+
+// Organisms components - direct imports from source
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
+} from './organisms/Card';
+export type {
+  CardProps,
+  CardHeaderProps,
+  CardFooterProps,
+  CardTitleProps,
+  CardActionProps,
+  CardDescriptionProps,
+  CardContentProps,
+} from './organisms/Card';

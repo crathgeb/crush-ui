@@ -8,7 +8,7 @@ export {
   CardContent,
 } from './card';
 
-export {
+export type {
   CardProps,
   CardHeaderProps,
   CardFooterProps,
@@ -16,4 +16,4 @@ export {
   CardActionProps,
   CardDescriptionProps,
   CardContentProps,
-} from './types';
+} from './card.types';
