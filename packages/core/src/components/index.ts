@@ -260,3 +260,7 @@ export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } fro
 
 export { UserProfileLabel } from "./organisms/user-profile-label";
 export type { UserProfileLabelProps } from "./organisms/user-profile-label";
+
+// Templates components - direct imports from source
+export { SidebarPageTemplate } from "./templates/sidebar-page-template";
+export type { SidebarPageTemplateProps } from "./templates/sidebar-page-template";

@@ -94,6 +94,9 @@ export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } fro
 
 export type { UserProfileLabelProps } from "../components/organisms/user-profile-label";
 
+// Re-export template component types
+export type { SidebarPageTemplateProps } from "../components/templates/sidebar-page-template";
+
 // Common types
 export interface BaseComponentProps {
   className?: string;

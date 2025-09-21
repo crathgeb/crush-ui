@@ -94,6 +94,9 @@ export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/organisms
 
 export { UserProfileLabel } from './components/organisms/user-profile-label';
 
+// Templates - Individual component exports for better tree-shaking
+export { SidebarPageTemplate } from './components/templates/sidebar-page-template';
+
 // Base/primitive components (commonly used)
 export {
   DropdownMenu as DropdownMenuPrimitive,
@@ -157,6 +160,7 @@ export type {
   TabsListProps,
   TabsTriggerProps,
   TabsContentProps,
+  SidebarPageTemplateProps,
 } from './types';
 
 // Utils - Exported for consumer use

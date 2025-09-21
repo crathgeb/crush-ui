@@ -1,13 +1,6 @@
-import React, { type PropsWithChildren, useEffect } from 'react';
-import { SidebarProvider, SidebarTrigger } from '../atoms';
-
-export interface SidebarPageTemplateProps {
-  sidebar?: React.JSX.Element;
-  rightSidebar?: React.JSX.Element;
-  header?: React.JSX.Element;
-  footer?: React.JSX.Element;
-  collapsible?: boolean;
-}
+import React, { type PropsWithChildren, useEffect } from "react";
+import { SidebarProvider, SidebarTrigger } from "@/components/atoms/sidebar";
+import type { SidebarPageTemplateProps } from "./sidebar-page-template.types";
 
 export const SidebarPageTemplate = ({
   sidebar,
@@ -19,11 +12,11 @@ export const SidebarPageTemplate = ({
 }: PropsWithChildren<SidebarPageTemplateProps>) => {
   useEffect(() => {
     // Set body className when component mounts
-    document.body.classList.add('bg-background', 'text-foreground');
+    document.body.classList.add("bg-background", "text-foreground");
 
     // Clean up when component unmounts
     return () => {
-      document.body.classList.remove('bg-background', 'text-foreground');
+      document.body.classList.remove("bg-background", "text-foreground");
     };
   }, []);
 
