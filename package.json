@@ -1,0 +1,43 @@
+{
+  "name": "crush-ui-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A modern UI component library with Storybook",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=packages/core && npm run build --workspace=packages/presets",
+    "build:core": "npm run build --workspace=packages/core",
+    "build:presets": "npm run build --workspace=packages/presets",
+    "dev:core": "npm run dev --workspace=packages/core",
+    "dev:presets": "npm run dev --workspace=packages/presets",
+    "storybook": "npm run storybook --workspace=packages/storybook",
+    "build-storybook": "npm run build-storybook --workspace=packages/storybook",
+    "publish:core": "npm publish --workspace=packages/core",
+    "publish:presets": "npm publish --workspace=packages/presets",
+    "publish:all": "npm run publish:core && npm run publish:presets",
+    "install:all": "npm install",
+    "clean": "rm -rf packages/*/dist packages/*/node_modules node_modules"
+  },
+  "keywords": [
+    "ui",
+    "components",
+    "react",
+    "typescript",
+    "storybook"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

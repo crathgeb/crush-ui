@@ -1,0 +1,54 @@
+@layer components {
+  :root {
+    /* TreeItem */
+    .treeitem {
+      @apply rounded-btn flex w-full items-center justify-between border-b-1 border-transparent px-2 py-1.5 text-base transition-colors hover:cursor-pointer;
+    }
+
+    .treeitem-search-match {
+      @apply bg-primary/10;
+    }
+    .treeitem-drop-target {
+      @apply bg-accent/10;
+    }
+    .treeitem-focused {
+      @apply bg-primary/20;
+    }
+    .treeitem-right-label {
+      @apply text-surface3-foreground/50 ml-auto text-xs;
+    }
+
+    /* FileTreeItem */
+    .treeitem-file {
+      @apply flex min-w-0 flex-1 cursor-pointer items-center gap-2;
+    }
+
+    .treeitem-file-icon {
+      @apply h-4 w-4 text-xs;
+    }
+
+    .treeitem-file-label {
+      @apply truncate text-sm;
+    }
+
+    /* FolderTreeItem */
+    .treeitem-folder {
+      @apply flex min-w-0 flex-1 cursor-pointer items-center;
+    }
+    .treeitem-folder-drop-target {
+      @apply bg-accent/10;
+    }
+    .treeitem-folder-chevron {
+      @apply text-surface3-foreground/70 -mr-1 h-4 w-4;
+    }
+    .treeitem-folder-icon {
+      @apply h-4 w-4 text-yellow-500;
+    }
+    .treeitem-folder-label {
+      @apply truncate text-sm font-medium;
+    }
+    .treeitem-folder-children-count {
+      @apply text-surface3-foreground/50 mt-0.5 text-xs;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@layer components {
+  :root {
+    .icon-btn {
+      @apply focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    /* Size variants */
+    .icon-btn-sm {
+      @apply h-6 w-6 p-1.5 text-sm;
+    }
+    .icon-btn-md {
+      @apply h-8 w-8 p-2 text-base;
+    }
+    .icon-btn-lg {
+      @apply h-10 w-10 p-3 text-lg;
+    }
+
+    /* Rounded variants */
+    .icon-btn-rounded-none {
+      @apply rounded-none;
+    }
+    .icon-btn-rounded-sm {
+      @apply rounded-[.5rem];
+    }
+    .icon-btn-rounded-md {
+      @apply rounded-[.75rem];
+    }
+    .icon-btn-rounded-lg {
+      @apply rounded-[1rem];
+    }
+    .icon-btn-rounded-full {
+      @apply rounded-full;
+    }
+
+    /* Color variants */
+    .icon-btn-primary {
+      @apply bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/80;
+    }
+    .icon-btn-secondary {
+      @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 active:bg-secondary/70;
+    }
+    .icon-btn-danger {
+      @apply bg-destructive text-primary-foreground hover:bg-destructive/90 active:bg-destructive/80;
+    }
+    .icon-btn-ghost {
+      @apply hover:bg-accent hover:text-accent-foreground active:bg-accent/80 bg-transparent;
+    }
+    .icon-btn-surface {
+      @apply bg-menu-background text-menu-foreground hover:bg-menu-item-background-hover hover:text-menu-item-foreground-hover transition-colors;
+    }
+  }
+}

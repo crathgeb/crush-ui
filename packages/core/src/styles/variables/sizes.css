@@ -1,0 +1,20 @@
+@layer base {
+  :root {
+    --border-radius: 0.625rem;
+    --border-radius-sm: calc(var(--border-radius) - 4px);
+    --border-radius-md: calc(var(--border-radius) - 2px);
+    --border-radius-lg: var(--border-radius);
+    --border-radius-xl: calc(var(--border-radius) + 4px);
+    --border-radius-menu-sm: calc(var(--border-radius) - 4px);
+    --border-radius-menu-md: calc(var(--border-radius) - 2px);
+    --border-radius-menu-lg: var(--border-radius);
+    --border-radius-btn-sm: calc(var(--border-radius) - 4px);
+    --border-radius-btn-md: calc(var(--border-radius) - 2px);
+    --border-radius-btn: var(--border-radius);
+    --spacing-thin: 0.125rem;
+    --spacing-sm: 0.25rem;
+    --spacing-md: 0.5rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.25rem;
+  }
+}

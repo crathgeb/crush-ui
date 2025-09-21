@@ -1,0 +1,32 @@
+{
+  "name": "@crush-ui/storybook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Storybook for crush-ui component library",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test": "test-storybook"
+  },
+  "dependencies": {
+    "@crush-ui/core": "workspace:*",
+    "@crush-ui/presets": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/react": "^8.0.0",
+    "@storybook/react-vite": "^8.0.0",
+    "@storybook/test": "^8.0.0",
+    "@storybook/test-runner": "^0.17.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "storybook": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}

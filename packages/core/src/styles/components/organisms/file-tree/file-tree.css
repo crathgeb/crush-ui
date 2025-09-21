@@ -1,0 +1,89 @@
+@layer components {
+  :root {
+    .tree {
+      @apply min-h-[100px];
+    }
+
+    .tree button[role='treeitem'] {
+      @apply flex w-full border-0 bg-transparent p-0 pb-0.5;
+    }
+
+    .renaming-item {
+      @apply bg-surface2 mb-0.5 rounded-lg px-2.5 py-1 pl-6;
+    }
+
+    .renaming-item input {
+      @apply h-full w-full border-0 bg-transparent outline-none;
+    }
+
+    .tree button[role='treeitem']:focus {
+      @apply outline-none;
+    }
+
+    button:focus-visible .treeitem.focused,
+    .treeitem.searchmatch.focused {
+      @apply outline-foreground outline-2;
+    }
+
+    .description {
+      @apply bg-muted text-muted-foreground rounded-lg px-3 py-2 font-sans text-sm;
+    }
+
+    .dragline {
+      @apply bg-accent -mt-px h-0.5;
+    }
+
+    .dragline::before {
+      content: '';
+      @apply bg-background border-accent absolute -top-1 left-0 h-2 w-2 rounded-full border-2;
+    }
+
+    .outeritem {
+      @apply flex items-center gap-0.5;
+    }
+
+    .outeritem button:not([role='treeitem']) {
+      @apply h-4/5 px-1 py-0.5;
+    }
+
+    .actionbar {
+      @apply mt-2 flex flex-wrap items-center justify-center gap-1;
+    }
+
+    .foreign-dragsource,
+    .foreign-dropzone,
+    .searchbox,
+    .actionbtn {
+      @apply border-border text-muted-foreground flex h-8 items-center justify-center rounded border bg-transparent px-2 text-sm;
+    }
+
+    .foreign-dragsource {
+      @apply cursor-grab;
+    }
+
+    .foreign-dragsource:active {
+      @apply cursor-grabbing;
+    }
+
+    .foreign-dragsource:before {
+      content: url(data:image/svg+xml;base64,PHN2ZyBzdHJva2U9ImN1cnJlbnRDb2xvciIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGhlaWdodD0iMThweCIgd2lkdGg9IjE4cHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTkgMTNhMSAxIDAgMSAxIDAtMiAxIDEgMCAwIDEgMCAyWm03LTFhMSAxIDAgMSAxLTIgMCAxIDEgMCAwIDEgMiAwWk05IDhhMSAxIDAgMSAxIDAtMiAxIDEgMCAwIDEgMCAyWm03LTFhMSAxIDAgMSAxLTIgMCAxIDEgMCAwIDEgMiAwWk05IDE4YTEgMSAwIDEgMSAwLTIgMSAxIDAgMCAxIDAgMlptNiAwYTEgMSAwIDEgMSAwLTIgMSAxIDAgMCAxIDAgMloiPjwvcGF0aD48L3N2Zz4=);
+      @apply z-10 mt-0.5 mr-2 inline-block w-2.5;
+    }
+
+    .foreign-dragsource:hover {
+      @apply bg-surface2;
+    }
+
+    .foreign-dropzone {
+      @apply border-dashed px-6;
+    }
+
+    .actionbtn:hover {
+      @apply bg-surface2 cursor-pointer;
+    }
+
+    .visible-assistive-text {
+      @apply static mb-4 block h-16 w-auto overflow-auto rounded bg-blue-50 p-3 dark:bg-blue-950;
+    }
+  }
+}

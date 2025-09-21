@@ -1,0 +1,44 @@
+@layer components {
+  :root {
+    .input-container {
+      @apply w-full;
+    }
+
+    .input-label {
+      @apply text-muted-foreground mb-1 block text-sm font-medium;
+    }
+
+    .input-icon-left {
+      @apply text-surface3-foreground/50 absolute top-1/2 left-2 h-4 w-4 -translate-y-1/2 transform;
+    }
+
+    .input-icon-right {
+      @apply text-surface3-foreground/50 absolute top-1/2 right-2 h-4 w-4 -translate-y-1/2 transform;
+    }
+
+    .input-main {
+      @apply bg-surface2 border-surface3-foreground/20 rounded-menu-sm focus:ring-primary/50 focus:border-primary/50 w-full border py-1.5 text-sm transition-colors focus:ring-2 focus:outline-none;
+    }
+    .input-main-icon-left {
+      @apply pr-3 pl-8;
+    }
+    .input-main-icon-right {
+      @apply pr-8 pl-3;
+    }
+    .input-main-icon-both {
+      @apply pr-8 pl-8;
+    }
+    .input-main-no-icon {
+      @apply px-3;
+    }
+    .input-optional {
+      @apply text-muted-foreground ml-1 text-xs italic;
+    }
+    .input-error-ring {
+      @apply border-destructive focus:border-destructive focus:ring-destructive/50;
+    }
+    .input-error-label {
+      @apply text-destructive mt-1 text-xs;
+    }
+  }
+}

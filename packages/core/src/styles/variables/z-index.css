@@ -1,0 +1,9 @@
+@layer base {
+  :root {
+    --z-base: 0;
+    --z-nav: 10;
+    --z-modal: 30;
+    --z-overlay: 40;
+    --z-toast: 50;
+  }
+}

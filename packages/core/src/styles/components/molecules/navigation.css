@@ -1,0 +1,31 @@
+@layer components {
+  :root {
+    .nav-header {
+      @apply border-border bg-nav-background sticky top-0 border-b px-6 py-4;
+    }
+
+    .nav-header-content {
+      @apply flex items-center space-x-4;
+    }
+
+    .nav-divider {
+      @apply border-border my-3 border-t;
+    }
+
+    .nav-section-label {
+      @apply text-muted-foreground my-3 px-6 py-2 text-xs font-semibold tracking-wider uppercase;
+    }
+
+    .nav-item {
+      @apply rounded-btn flex w-full items-center justify-between px-6 py-3 text-base hover:cursor-pointer;
+    }
+
+    .nav-item-default {
+      @apply bg-nav-item-background text-nav-item-foreground hover:bg-nav-item-background-hover hover:text-nav-item-foreground-hover;
+    }
+
+    .nav-item-active {
+      @apply bg-nav-item-background-active text-nav-item-foreground-active;
+    }
+  }
+}

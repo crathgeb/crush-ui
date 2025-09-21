@@ -1,0 +1,19 @@
+@layer components {
+  :root {
+    .ts-mobile-bottom-nav-bar {
+      @apply bg-nav-background text-nav-foreground z-nav border-border fixed right-0 bottom-0 left-0 flex h-16 items-center justify-around border-t shadow-lg;
+    }
+
+    .ts-mobile-bottom-nav-bar-item {
+      @apply bg-nav-item-background text-nav-item-foreground hover:bg-nav-item-background-hover hover:text-nav-item-foreground-hover active:bg-nav-item-background-active active:text-nav-item-foreground-active flex h-15 min-w-0 flex-1 cursor-pointer flex-col items-center justify-center px-3 py-2 text-xs font-medium transition-colors;
+    }
+
+    .ts-mobile-bottom-nav-bar-item-icon {
+      @apply mb-1 h-6 w-6;
+    }
+
+    .ts-mobile-bottom-nav-bar-item-label {
+      @apply text-center leading-tight;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@layer components {
+  :root {
+    .ts-magic-drawer-backdrop {
+      @apply z-overlay fixed inset-0 bg-black/50 transition-opacity duration-300;
+    }
+    .ts-magic-drawer-backdrop-open {
+      @apply opacity-100;
+    }
+    .ts-magic-drawer-backdrop-closed {
+      @apply pointer-events-none opacity-0;
+    }
+
+    .ts-magic-drawer-container {
+      @apply fixed z-50 transition-transform duration-300;
+    }
+    .ts-magic-drawer-container-left {
+      @apply left-0 flex flex-row;
+    }
+    .ts-magic-drawer-container-right {
+      @apply right-0 flex flex-row;
+    }
+
+    .ts-magic-drawer-content {
+      @apply bg-nav-background text-nav-foreground relative overflow-y-auto;
+    }
+
+    .ts-magic-drawer-screen {
+      @apply w-full transition-transform duration-300 ease-out;
+    }
+  }
+}

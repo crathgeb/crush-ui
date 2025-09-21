@@ -1,0 +1,16 @@
+{
+  "extends": "../core/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "noEmit": true
+  },
+  "include": [
+    "../core/src",
+    "../presets/src",
+    "src/**/*",
+    ".storybook/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

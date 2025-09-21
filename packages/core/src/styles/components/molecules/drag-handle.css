@@ -1,0 +1,50 @@
+@layer components {
+  :root {
+    /* Container */
+    .ts-drag-handle-container {
+      @apply bg-nav-background text-nav-foreground flex w-full cursor-grab justify-center shadow-2xl active:cursor-grabbing;
+    }
+    .ts-drag-handle-container-up {
+      @apply border-border rounded-t-full rounded-b-none border-t;
+    }
+    .ts-drag-handle-container-down {
+      @apply border-border rounded-t-none rounded-b-full border-b;
+    }
+    .ts-drag-handle-container-left {
+      @apply border-border h-full w-4 rounded-l-full rounded-r-none border-l;
+    }
+    .ts-drag-handle-container-right {
+      @apply border-border h-full w-4 rounded-l-none rounded-r-full border-r;
+    }
+
+    /* Handle */
+    .ts-drag-handle-handle {
+      @apply flex h-5 w-full items-center justify-center select-none;
+    }
+    .ts-drag-handle-handle-up {
+      @apply rounded-t-full rounded-b-none;
+    }
+    .ts-drag-handle-handle-down {
+      @apply rounded-t-none rounded-b-full;
+    }
+    .ts-drag-handle-handle-left {
+      @apply h-full w-4 rounded-l-full rounded-r-none;
+    }
+    .ts-drag-handle-handle-right {
+      @apply h-full w-4 rounded-l-none rounded-r-full;
+    }
+
+    /* Dragging */
+    .ts-drag-handle-dragging {
+      @apply bg-nav-item-background-hover;
+    }
+
+    /* Dash Mark */
+    .ts-drag-handle-dash-mark {
+      @apply bg-muted h-1 w-12 rounded-full;
+    }
+    .ts-drag-handle-dash-mark-vertical {
+      @apply h-12 w-1;
+    }
+  }
+}

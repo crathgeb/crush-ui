@@ -1,0 +1,10 @@
+@layer components {
+  :root {
+    .ts-inline {
+      @apply flex flex-row items-center gap-2;
+    }
+    .ts-inline-lg {
+      @apply gap-4;
+    }
+  }
+}
