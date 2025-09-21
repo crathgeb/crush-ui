@@ -1,10 +1,5 @@
 import React from 'react';
-
-type IconLabelProps = {
-  icon?: React.ReactElement;
-  label?: React.ReactElement | string;
-  subLabel?: React.ReactElement | string;
-};
+import type { IconLabelProps } from './icon-label.types';
 
 export const IconLabel: React.FC<IconLabelProps> = ({
   icon,

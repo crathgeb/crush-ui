@@ -53,6 +53,7 @@ export {
 
 // Molecules - Individual component exports for better tree-shaking
 export { IconButton } from './components/molecules/icon-button';
+export { IconLabel } from './components/molecules/icon-label';
 
 // Base/primitive components (commonly used)
 export {
@@ -95,6 +96,7 @@ export type {
   MenuItem,
   ToasterProps,
   IconButtonProps,
+  IconLabelProps,
 } from './types';
 
 // Utils - Exported for consumer use

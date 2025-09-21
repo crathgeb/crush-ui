@@ -163,3 +163,5 @@ export type {
 // Molecules components - direct imports from source
 export { IconButton } from './molecules/icon-button';
 export type { IconButtonProps } from './molecules/icon-button';
+export { IconLabel } from './molecules/icon-label';
+export type { IconLabelProps } from './molecules/icon-label';
