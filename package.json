@@ -1,5 +1,5 @@
 {
-  "name": "crush-ui-monorepo",
+  "name": "crush-ux-monorepo",
   "version": "1.0.0",
   "private": true,
   "description": "A modern UI component library with Storybook",

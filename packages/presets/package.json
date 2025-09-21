@@ -1,7 +1,7 @@
 {
-  "name": "@crush-ui/presets",
+  "name": "@crush-ux/presets",
   "version": "1.0.0",
-  "description": "Design presets and themes for crush-ui components",
+  "description": "Design presets and themes for crush-ux components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -44,10 +44,10 @@
   },
   "homepage": "",
   "peerDependencies": {
-    "@crush-ui/core": "^1.0.0"
+    "@crush-ux/core": "^1.0.0"
   },
   "devDependencies": {
-    "@crush-ui/core": "*",
+    "@crush-ux/core": "*",
     "@types/react": "^19.1.9",
     "eslint": "^9.32.0",
     "prettier": "^3.6.2",

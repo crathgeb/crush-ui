@@ -1,4 +1,4 @@
-# crush-ui
+# crush-ux
 
 A modern UI component library built with React and TypeScript, with integrated Storybook for development and testing.
 
@@ -6,18 +6,18 @@ A modern UI component library built with React and TypeScript, with integrated S
 
 This is a monorepo containing:
 
-- `packages/core/` - The main UI component library (published to npm as `@crush-ui/core`)
-- `packages/presets/` - Design presets and themes (published to npm as `@crush-ui/presets`)
+- `packages/core/` - The main UI component library (published to npm as `@crush-ux/core`)
+- `packages/presets/` - Design presets and themes (published to npm as `@crush-ux/presets`)
 - `packages/storybook/` - Storybook for component development and testing
 
 ## Installation
 
 ```bash
 # Install the core component library
-npm install @crush-ui/core
+npm install @crush-ux/core
 
 # Install presets for themes and styling
-npm install @crush-ui/presets
+npm install @crush-ux/presets
 ```
 
 ## Usage
@@ -25,28 +25,24 @@ npm install @crush-ui/presets
 ### Basic Usage
 
 ```jsx
-import { Button } from '@crush-ui/core';
+import { Button } from "@crush-ux/core";
 
 function App() {
-  return (
-    <Button onClick={() => console.log('clicked')}>
-      Click me
-    </Button>
-  );
+  return <Button onClick={() => console.log("clicked")}>Click me</Button>;
 }
 ```
 
 ### Using Presets
 
 ```jsx
-import { Button } from '@crush-ui/core';
-import { buttonPresets, lightTheme } from '@crush-ui/presets';
+import { Button } from "@crush-ux/core";
+import { buttonPresets, lightTheme } from "@crush-ux/presets";
 
 function App() {
   return (
     <Button
       {...buttonPresets.hero.defaultProps}
-      onClick={() => console.log('clicked')}
+      onClick={() => console.log("clicked")}
     >
       Hero Button
     </Button>

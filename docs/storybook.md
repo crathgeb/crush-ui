@@ -19,7 +19,7 @@ Every Storybook story MUST contain exactly these elements in this order:
 
 ````typescript
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ComponentName } from '@crush-ui/core';
+import { ComponentName } from '@crush-ux/core';
 
 const meta: Meta<typeof ComponentName> = {
   title: 'Category/ComponentName', // Use: _base, Atoms, Molecules, Organisms, Templates

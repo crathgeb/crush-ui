@@ -1,16 +1,16 @@
 {
-  "name": "@crush-ui/storybook",
+  "name": "@crush-ux/storybook",
   "version": "1.0.0",
   "private": true,
-  "description": "Storybook for crush-ui component library",
+  "description": "Storybook for crush-ux component library",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "test-storybook"
   },
   "dependencies": {
-    "@crush-ui/core": "*",
-    "@crush-ui/presets": "*"
+    "@crush-ux/core": "*",
+    "@crush-ux/presets": "*"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^9.1.1",
