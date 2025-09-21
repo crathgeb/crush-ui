@@ -52,6 +52,7 @@ export {
 } from './components/atoms/sidebar';
 
 // Molecules - Individual component exports for better tree-shaking
+export { DragHandle } from './components/molecules/drag-handle';
 export { IconButton } from './components/molecules/icon-button';
 export { IconLabel } from './components/molecules/icon-label';
 export {
@@ -103,6 +104,7 @@ export type {
   DropdownData,
   MenuItem,
   ToasterProps,
+  DragHandleProps,
   IconButtonProps,
   IconLabelProps,
   NavigationProps,

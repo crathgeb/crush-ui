@@ -161,6 +161,8 @@ export type {
 } from './atoms/sidebar';
 
 // Molecules components - direct imports from source
+export { DragHandle } from './molecules/drag-handle';
+export type { DragHandleProps } from './molecules/drag-handle';
 export { IconButton } from './molecules/icon-button';
 export type { IconButtonProps } from './molecules/icon-button';
 export { IconLabel } from './molecules/icon-label';
