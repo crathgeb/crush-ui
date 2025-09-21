@@ -17,11 +17,12 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm run build:cjs && npm run build:esm && npm run build:types",
-    "build:cjs": "tsc --module commonjs --outDir dist",
-    "build:esm": "tsc --module esnext --outDir dist/esm && mv dist/esm/index.js dist/index.esm.js",
-    "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist",
-    "dev": "tsc --watch",
+    "build": "rm -rf dist && vite build --config vite.lib.config.ts",
+    "dev": "vite build --config vite.lib.config.ts --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -32,7 +33,7 @@
     "css",
     "styling"
   ],
-  "author": "",
+  "author": "Christopher Rathgeb",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -46,8 +47,13 @@
     "@crush-ui/core": "^1.0.0"
   },
   "devDependencies": {
-    "@crush-ui/core": "workspace:*",
-    "typescript": "^5.0.0"
+    "@crush-ui/core": "*",
+    "@types/react": "^19.1.9",
+    "eslint": "^9.32.0",
+    "prettier": "^3.6.2",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.0",
+    "vite-plugin-dts": "^4.5.4"
   },
   "publishConfig": {
     "access": "public"

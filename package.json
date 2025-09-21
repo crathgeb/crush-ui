@@ -12,8 +12,15 @@
     "build:presets": "npm run build --workspace=packages/presets",
     "dev:core": "npm run dev --workspace=packages/core",
     "dev:presets": "npm run dev --workspace=packages/presets",
+    "lint": "npm run lint --workspace=packages/core && npm run lint --workspace=packages/presets",
+    "lint:fix": "npm run lint:fix --workspace=packages/core && npm run lint:fix --workspace=packages/presets",
+    "format": "npm run format --workspace=packages/core && npm run format --workspace=packages/presets",
+    "format:check": "npm run format:check --workspace=packages/core && npm run format:check --workspace=packages/presets",
     "storybook": "npm run storybook --workspace=packages/storybook",
     "build-storybook": "npm run build-storybook --workspace=packages/storybook",
+    "test": "npm run test --workspace=packages/storybook",
+    "release": "npm run build && standard-version && git push --follow-tags",
+    "release:rc": "npm run build && standard-version --prerelease rc && git push --follow-tags",
     "publish:core": "npm publish --workspace=packages/core",
     "publish:presets": "npm publish --workspace=packages/presets",
     "publish:all": "npm run publish:core && npm run publish:presets",
@@ -27,7 +34,7 @@
     "typescript",
     "storybook"
   ],
-  "author": "",
+  "author": "Christopher Rathgeb",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -38,6 +45,12 @@
   },
   "homepage": "",
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "@eslint/js": "^9.32.0",
+    "eslint": "^9.32.0",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "standard-version": "^9.5.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.39.0"
   }
 }

@@ -1,0 +1,2 @@
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from './tooltip';
+export type { TooltipProps, TooltipTriggerProps, TooltipContentProps, TooltipProviderProps } from './tooltip.types';
