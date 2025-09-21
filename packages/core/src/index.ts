@@ -54,6 +54,14 @@ export {
 // Molecules - Individual component exports for better tree-shaking
 export { IconButton } from './components/molecules/icon-button';
 export { IconLabel } from './components/molecules/icon-label';
+export {
+  Navigation,
+  NavItem,
+  NavHeader,
+  NavDivider,
+  NavSectionLabel,
+  navItemVariants,
+} from './components/molecules/navigation';
 
 // Base/primitive components (commonly used)
 export {
@@ -97,6 +105,11 @@ export type {
   ToasterProps,
   IconButtonProps,
   IconLabelProps,
+  NavigationProps,
+  NavItemProps,
+  NavHeaderProps,
+  NavDividerProps,
+  NavSectionLabelProps,
 } from './types';
 
 // Utils - Exported for consumer use

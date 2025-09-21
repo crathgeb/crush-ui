@@ -1,9 +1,6 @@
 import React from 'react';
 import { cn } from '@/utils';
-
-interface NavSectionLabelProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
-}
+import type { NavSectionLabelProps } from '../navigation.types';
 
 export const NavSectionLabel = React.forwardRef<
   HTMLDivElement,

@@ -19,7 +19,7 @@ Every Storybook story MUST contain exactly these elements in this order:
 
 ````typescript
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ComponentName } from '@/components/path/to/component';
+import { ComponentName } from '@crush-ui/core';
 
 const meta: Meta<typeof ComponentName> = {
   title: 'Category/ComponentName', // Use: _base, Atoms, Molecules, Organisms, Templates
@@ -153,11 +153,11 @@ parameters: {
 
 Place stories in the correct directory:
 
-- `src/Components/_base/` → `src/stories/_base/ComponentName.stories.tsx`
-- `src/Components/Atoms/` → `src/stories/Atoms/ComponentName.stories.tsx`
-- `src/Components/Molecules/` → `src/stories/Molecules/ComponentName.stories.tsx`
-- `src/Components/Organisms/` → `src/stories/Organisms/ComponentName.stories.tsx`
-- `src/Components/Templates/` → `src/stories/Templates/ComponentName.stories.tsx`
+- `packages/core/src/components/_base/*` → `packages/storybook/src/stories/_base/component-name.stories.tsx`
+- `packages/core/src/components/atoms/` → `packages/storybook/src/stories/atoms/component-name.stories.tsx`
+- `packages/core/src/components/molecules/` → `packages/storybook/src/stories/Molecules/component-name.stories.tsx`
+- `packages/core/src/components/organisms/` → `packages/storybook/src/stories/organisms/component-name.stories.tsx`
+- `packages/core/src/components/templates/` → `packages/storybook/src/stories/templates/component-name.stories.tsx`
 
 ### 7. Required Stories
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { cn } from '@/utils';
-
-interface NavDividerProps extends React.HTMLAttributes<HTMLDivElement> {}
+import type { NavDividerProps } from '../navigation.types';
 
 export const NavDivider = React.forwardRef<HTMLDivElement, NavDividerProps>(
   ({ className, ...props }, ref) => {

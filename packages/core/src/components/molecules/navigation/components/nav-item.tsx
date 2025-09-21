@@ -1,24 +1,7 @@
 import React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils';
-
-const navItemVariants = cva('nav-item', {
-  variants: {
-    variant: {
-      default: 'nav-item-default',
-      active: 'nav-item-active',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
-
-export interface NavItemProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof navItemVariants> {
-  asChild?: boolean;
-}
+import type { NavItemProps } from '../navigation.types';
+import { navItemVariants } from '../navigation.types';
 
 export const NavItem = React.forwardRef<HTMLDivElement, NavItemProps>(
   ({ asChild = false, variant, className, children, ...props }, ref) => {
@@ -31,10 +14,10 @@ export const NavItem = React.forwardRef<HTMLDivElement, NavItemProps>(
       );
 
       return React.cloneElement(children, {
-        ...props, // NavItem props first
-        ...childProps, // Child props override NavItem props
-        className: mergedClassName, // Manually merge classNames
-        ref: ref, // Forward ref
+        ...props,
+        ...childProps,
+        className: mergedClassName,
+        ref: ref,
       });
     }
 
