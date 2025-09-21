@@ -51,6 +51,9 @@ export {
   useSidebar,
 } from './components/atoms/sidebar';
 
+// Molecules - Individual component exports for better tree-shaking
+export { IconButton } from './components/molecules/icon-button';
+
 // Base/primitive components (commonly used)
 export {
   DropdownMenu as DropdownMenuPrimitive,
@@ -91,6 +94,7 @@ export type {
   DropdownData,
   MenuItem,
   ToasterProps,
+  IconButtonProps,
 } from './types';
 
 // Utils - Exported for consumer use

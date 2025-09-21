@@ -43,6 +43,9 @@ export type {
 
 export type { ToasterProps } from "../components/atoms/toaster";
 
+// Re-export molecule component types
+export type { IconButtonProps } from "../components/molecules/icon-button";
+
 // Common types
 export interface BaseComponentProps {
   className?: string;

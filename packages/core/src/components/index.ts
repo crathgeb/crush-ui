@@ -159,3 +159,7 @@ export type {
   SidebarMenuButtonProps,
   SidebarMenuButtonVariants,
 } from './atoms/sidebar';
+
+// Molecules components - direct imports from source
+export { IconButton } from './molecules/icon-button';
+export type { IconButtonProps } from './molecules/icon-button';

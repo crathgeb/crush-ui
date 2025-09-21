@@ -1,5 +1,14 @@
 # Component Folder Organization Pattern
 
+## Componentization Steps
+
+When componentizing existing components or creating new ones, follow these steps:
+
+1. **Organize the components according to the specification** - Create/Restructure files to follow the kebab-case folder structure with separate `.types.ts` files
+2. **Add/update all the exports in index.ts files** - Update all barrel export files to include the new/restructured components
+
+## Overview
+
 This project follows **Atomic Design** methodology, organizing components into:
 
 - **atoms/** - Basic building blocks (buttons, inputs, labels, icons)
@@ -11,16 +20,19 @@ This project follows **Atomic Design** methodology, organizing components into:
 ## Atomic Design Guidelines
 
 **Atoms** should be:
+
 - Single-purpose UI elements
 - Highly reusable across the entire system
 - Have minimal dependencies on other components
 
 **Molecules** should be:
+
 - Combinations of 2-5 atoms that work together
 - Represent a single piece of functionality
 - Be reusable in different contexts
 
 **Organisms** should be:
+
 - Complex components that form distinct sections of an interface
 - May contain molecules, atoms, and other organisms
 - Represent major UI sections or features
@@ -88,18 +100,18 @@ Define and export all types, interfaces, and variant definitions:
 
 ```typescript
 // component-name/component-name.types.ts
-import { type VariantProps } from 'class-variance-authority';
-import { cva } from 'class-variance-authority';
+import { type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 
-export const ButtonVariants = cva('btn', {
+export const ButtonVariants = cva("btn", {
   variants: {
-    variant: { default: 'btn-default', destructive: 'btn-destructive' },
-    size: { default: 'btn-md', sm: 'btn-sm', lg: 'btn-lg' },
+    variant: { default: "btn-default", destructive: "btn-destructive" },
+    size: { default: "btn-md", sm: "btn-sm", lg: "btn-lg" },
   },
 });
 
 export interface ButtonProps
-  extends React.ComponentProps<'button'>,
+  extends React.ComponentProps<"button">,
     VariantProps<typeof ButtonVariants> {
   asChild?: boolean;
 }
@@ -112,96 +124,104 @@ When creating a new component, add it to these files **in order** (replace `{lev
 ### 1. Component level barrel (`/src/components/{level}/index.ts`)
 
 ```typescript
-export { NewComponent } from './new-component';
-export type { NewComponentProps } from './new-component';
+export { NewComponent } from "./new-component";
+export type { NewComponentProps } from "./new-component";
 ```
 
 ### 2. Main components barrel (`/src/components/index.ts`)
 
 ```typescript
 // Direct import from source for optimal tree-shaking
-export { NewComponent } from './{level}/new-component';
-export type { NewComponentProps } from './{level}/new-component';
+export { NewComponent } from "./{level}/new-component";
+export type { NewComponentProps } from "./{level}/new-component";
 ```
 
 ### 3. Types index (`/src/types/index.ts`)
 
 ```typescript
 // Re-export component types
-export type { NewComponentProps } from '../components/{level}/new-component';
+export type { NewComponentProps } from "../components/{level}/new-component";
 ```
 
 ### 4. Main package index (`/src/index.ts`)
 
 ```typescript
 // Individual component exports for better tree-shaking
-export { NewComponent } from './components/{level}/new-component';
+export { NewComponent } from "./components/{level}/new-component";
 // Types are exported via './types' wildcard
 ```
 
 ### Examples by Atomic Level:
 
 **Atom (Button):**
+
 ```typescript
 // atoms/index.ts
-export { Button } from './button';
+export { Button } from "./button";
 // components/index.ts
-export { Button } from './atoms/button';
+export { Button } from "./atoms/button";
 // types/index.ts
-export type { ButtonProps } from '../components/atoms/button';
+export type { ButtonProps } from "../components/atoms/button";
 ```
 
 **Molecule (FormField):**
+
 ```typescript
 // molecules/index.ts
-export { FormField } from './form-field';
+export { FormField } from "./form-field";
 // components/index.ts
-export { FormField } from './molecules/form-field';
+export { FormField } from "./molecules/form-field";
 // types/index.ts
-export type { FormFieldProps } from '../components/molecules/form-field';
+export type { FormFieldProps } from "../components/molecules/form-field";
 ```
 
 **Organism (Header):**
+
 ```typescript
 // organisms/index.ts
-export { Header } from './header';
+export { Header } from "./header";
 // components/index.ts
-export { Header } from './organisms/header';
+export { Header } from "./organisms/header";
 // types/index.ts
-export type { HeaderProps } from '../components/organisms/header';
+export type { HeaderProps } from "../components/organisms/header";
 ```
 
 ## Tree-Shaking Best Practices
 
 ### ✅ DO: Use explicit exports
+
 ```typescript
-export { Button, ButtonVariants } from './atoms/button';
-export { FormField } from './molecules/form-field';
-export { Header } from './organisms/header';
-export type { ButtonProps } from './atoms/button';
+export { Button, ButtonVariants } from "./atoms/button";
+export { FormField } from "./molecules/form-field";
+export { Header } from "./organisms/header";
+export type { ButtonProps } from "./atoms/button";
 ```
 
 ### ❌ DON'T: Use wildcard exports in main entry points
+
 ```typescript
-export * from './atoms'; // Can harm tree-shaking
-export * from './molecules'; // Can harm tree-shaking
+export * from "./atoms"; // Can harm tree-shaking
+export * from "./molecules"; // Can harm tree-shaking
 ```
 
 ### ✅ DO: Import directly from component sources in barrel files
+
 ```typescript
-export { Button } from './atoms/button'; // Direct path
-export { FormField } from './molecules/form-field'; // Direct path
+export { Button } from "./atoms/button"; // Direct path
+export { FormField } from "./molecules/form-field"; // Direct path
 ```
 
 ### ❌ DON'T: Chain through multiple barrel files
+
 ```typescript
-export { Button } from './atoms'; // Goes through atoms/index.ts
-export { FormField } from './molecules'; // Goes through molecules/index.ts
+export { Button } from "./atoms"; // Goes through atoms/index.ts
+export { FormField } from "./molecules"; // Goes through molecules/index.ts
 ```
 
 ## Benefits
 
 This pattern ensures:
+
 - **Clean separation of concerns** - Types, implementation, and exports are in separate files
 - **Predictable file locations** - Following kebab-case naming conventions
 - **Clear public APIs** - Each component exports only what's needed
