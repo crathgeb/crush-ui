@@ -2,10 +2,22 @@ import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: [],
+  addons: [
+    "@storybook/addon-docs",
+    "@storybook/addon-a11y",
+  ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
+  },
+  async viteFinal(config) {
+    const { mergeConfig } = await import('vite');
+
+    return mergeConfig(config, {
+      esbuild: {
+        jsx: 'automatic',
+      },
+    });
   },
   typescript: {
     check: false,

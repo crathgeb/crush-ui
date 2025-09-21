@@ -1,0 +1,95 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Colors */
+  --color-background: var(--background, #ffffff);
+  --color-foreground: var(--foreground, #000000);
+  --color-primary: var(--primary, #007bff);
+  --color-primary-foreground: var(--primary-foreground, #ffffff);
+  --color-secondary: var(--secondary, #6c757d);
+  --color-secondary-foreground: var(--secondary-foreground, #ffffff);
+  --color-muted: var(--muted, #f8f9fa);
+  --color-muted-foreground: var(--muted-foreground, #6c757d);
+  --color-accent: var(--accent, #e9ecef);
+  --color-accent-foreground: var(--accent-foreground, #495057);
+  --color-destructive: var(--destructive, #dc3545);
+  --color-destructive-foreground: var(--destructive-foreground, #ffffff);
+  --color-border: var(--border, #dee2e6);
+  --color-input: var(--input, #ffffff);
+  --color-ring: var(--ring, #007bff);
+  --color-card: var(--card, #ffffff);
+  --color-card-foreground: var(--card-foreground, #000000);
+  --color-popover: var(--popover, #ffffff);
+  --color-popover-foreground: var(--popover-foreground, #000000);
+
+  /* Surface colors */
+  --color-surface1: var(--surface1, #f8f9fa);
+  --color-surface1-foreground: var(--surface1-foreground, #495057);
+  --color-surface2: var(--surface2, #e9ecef);
+  --color-surface2-foreground: var(--surface2-foreground, #495057);
+  --color-surface3: var(--surface3, #dee2e6);
+  --color-surface3-foreground: var(--surface3-foreground, #495057);
+
+  /* Component colors */
+  --color-sidebar: var(--sidebar, #f8f9fa);
+  --color-sidebar-foreground: var(--sidebar-foreground, #495057);
+  --color-sidebar-primary: var(--sidebar-primary, #007bff);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground, #ffffff);
+  --color-sidebar-accent: var(--sidebar-accent, #e9ecef);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground, #495057);
+  --color-sidebar-border: var(--sidebar-border, #dee2e6);
+  --color-sidebar-ring: var(--sidebar-ring, #007bff);
+
+  --color-menu-background: var(--menu-background, #ffffff);
+  --color-menu-foreground: var(--menu-foreground, #000000);
+  --color-menu-foreground-muted: var(--menu-foreground-muted, #6c757d);
+  --color-menu-item-background: var(--menu-item-background, transparent);
+  --color-menu-item-foreground: var(--menu-item-foreground, #000000);
+  --color-menu-item-background-hover: var(--menu-item-background-hover, #f8f9fa);
+  --color-menu-item-foreground-hover: var(--menu-item-foreground-hover, #000000);
+  --color-menu-item-background-active: var(--menu-item-background-active, #e9ecef);
+  --color-menu-item-foreground-active: var(--menu-item-foreground-active, #000000);
+
+  --color-nav-background: var(--nav-background, #ffffff);
+  --color-nav-foreground: var(--nav-foreground, #000000);
+  --color-nav-item-background: var(--nav-item-background, transparent);
+  --color-nav-item-foreground: var(--nav-item-foreground, #000000);
+  --color-nav-item-background-hover: var(--nav-item-background-hover, #f8f9fa);
+  --color-nav-item-foreground-hover: var(--nav-item-foreground-hover, #000000);
+  --color-nav-item-background-active: var(--nav-item-background-active, #e9ecef);
+  --color-nav-item-foreground-active: var(--nav-item-foreground-active, #000000);
+
+  /* Chart colors */
+  --color-chart-1: var(--chart-1, #007bff);
+  --color-chart-2: var(--chart-2, #28a745);
+  --color-chart-3: var(--chart-3, #ffc107);
+  --color-chart-4: var(--chart-4, #dc3545);
+  --color-chart-5: var(--chart-5, #6f42c1);
+
+  /* Border radius */
+  --radius: var(--border-radius, 0.5rem);
+  --radius-sm: var(--border-radius-sm, 0.25rem);
+  --radius-md: var(--border-radius-md, 0.375rem);
+  --radius-lg: var(--border-radius-lg, 0.75rem);
+  --radius-xl: var(--border-radius-xl, 1rem);
+  --radius-menu-sm: var(--border-radius-menu-sm, 0.25rem);
+  --radius-menu-md: var(--border-radius-menu-md, 0.375rem);
+  --radius-menu-lg: var(--border-radius-menu-lg, 0.5rem);
+  --radius-btn-sm: var(--border-radius-btn-sm, 0.25rem);
+  --radius-btn-md: var(--border-radius-btn-md, 0.375rem);
+  --radius-btn: var(--border-radius-btn, 0.5rem);
+
+  /* Spacing */
+  --space-thin: var(--spacing-thin, 0.125rem);
+  --space-sm: var(--spacing-sm, 0.5rem);
+  --space-md: var(--spacing-md, 1rem);
+  --space-lg: var(--spacing-lg, 1.5rem);
+  --space-xl: var(--spacing-xl, 2rem);
+
+  /* Z-index */
+  --z-base: var(--z-base, 0);
+  --z-nav: var(--z-nav, 10);
+  --z-modal: var(--z-modal, 50);
+  --z-overlay: var(--z-overlay, 100);
+  --z-toast: var(--z-toast, 1000);
+}

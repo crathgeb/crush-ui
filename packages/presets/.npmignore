@@ -2,10 +2,10 @@
 src/
 *.ts
 *.tsx
-!dist/
 
 # Development files
 tsconfig.json
+vite.lib.config.ts
 .eslintrc*
 .prettierrc*
 jest.config.*
@@ -13,10 +13,6 @@ jest.config.*
 *.spec.*
 __tests__/
 coverage/
-
-# Documentation
-docs/
-examples/
 
 # Build tools
 rollup.config.js

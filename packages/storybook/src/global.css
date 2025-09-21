@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "@crush-ux/presets/theme.css";
+
+/* Optional: Override default theme values for light mode */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #007bff;
+  --primary-foreground: #ffffff;
+  /* Add other overrides as needed */
+}
+
+/* Dark theme overrides */
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #0d6efd;
+  --primary-foreground: #ffffff;
+  /* Add other dark theme overrides as needed */
+}

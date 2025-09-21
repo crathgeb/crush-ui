@@ -153,3 +153,47 @@ export const Playground: Story = {
     },
   },
 };
+
+const ThemedButtonsComponent = () => (
+  <div className="flex flex-col gap-6">
+    <div className="space-y-2">
+      <h3 className="text-lg font-semibold">Themed Buttons</h3>
+      <div className="flex gap-4">
+        <Button className="bg-primary text-primary-foreground">Primary</Button>
+        <Button className="bg-secondary text-secondary-foreground">Secondary</Button>
+        <Button className="bg-accent text-accent-foreground">Accent</Button>
+        <Button className="bg-destructive text-destructive-foreground">Destructive</Button>
+      </div>
+    </div>
+
+    <div className="space-y-2">
+      <h3 className="text-lg font-semibold">Surface Variants</h3>
+      <div className="flex gap-4">
+        <Button className="bg-surface1 text-surface1-foreground">Surface 1</Button>
+        <Button className="bg-surface2 text-surface2-foreground">Surface 2</Button>
+        <Button className="bg-surface3 text-surface3-foreground">Surface 3</Button>
+      </div>
+    </div>
+
+    <div className="space-y-2">
+      <h3 className="text-lg font-semibold">Custom Rounded</h3>
+      <div className="flex gap-4">
+        <Button className="rounded-btn-sm">Small Radius</Button>
+        <Button className="rounded-btn-md">Medium Radius</Button>
+        <Button className="rounded-btn">Default Radius</Button>
+      </div>
+    </div>
+  </div>
+);
+
+export const ThemedButtons: Story = {
+  render: () => <ThemedButtonsComponent />,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Examples of buttons using the theme colors from the presets package. These use CSS variables that automatically adapt to light/dark themes.\n\n```tsx\n// Primary theme color\n<Button className="bg-primary text-primary-foreground">Primary</Button>\n\n// Surface colors\n<Button className="bg-surface1 text-surface1-foreground">Surface 1</Button>\n\n// Custom border radius from theme\n<Button className="rounded-btn-sm">Small Radius</Button>\n```',
+      },
+    },
+  },
+};
