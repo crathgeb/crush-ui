@@ -1,14 +1,19 @@
 import type { ReactNode } from "react";
 
-// Re-export all component types from atoms
+// Re-export component types directly from source for optimal tree-shaking
+export type { ButtonProps } from "../components/atoms/button";
+export type { InputProps } from "../components/atoms/input";
+export type { SeparatorProps } from "../components/atoms/separator";
+export type { SkeletonProps } from "../components/atoms/skeleton";
+
 export type {
-  ButtonProps,
   TooltipProps,
   TooltipTriggerProps,
   TooltipContentProps,
   TooltipProviderProps,
-  SeparatorProps,
-  InputProps,
+} from "../components/atoms/tooltip";
+
+export type {
   SheetProps,
   SheetTriggerProps,
   SheetCloseProps,
@@ -17,7 +22,9 @@ export type {
   SheetFooterProps,
   SheetTitleProps,
   SheetDescriptionProps,
-  SkeletonProps,
+} from "../components/atoms/sheet";
+
+export type {
   SidebarContextProps,
   SidebarProviderProps,
   SidebarProps,
@@ -26,11 +33,15 @@ export type {
   SidebarSeparatorProps,
   SidebarMenuButtonProps,
   SidebarMenuButtonVariants,
+} from "../components/atoms/sidebar";
+
+export type {
   DropdownMenuProps,
   DropdownData,
   MenuItem,
-  ToasterProps,
-} from "../components/atoms";
+} from "../components/atoms/dropdown-menu";
+
+export type { ToasterProps } from "../components/atoms/toaster";
 
 // Common types
 export interface BaseComponentProps {
